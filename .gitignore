@@ -1,11 +1,19 @@
-# Dependencies
+# Node / Frontend
 node_modules/
 .pnp/
 .pnp.js
-
-# Build artifacts
 dist/
 build/
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/wrapper/maven-wrapper.jar
+
+# Python (legacy)
 *.pyc
 __pycache__/
 .env
@@ -24,3 +32,4 @@ pnpm-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+*.iml
