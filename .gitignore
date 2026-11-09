@@ -4,6 +4,7 @@ node_modules/
 .pnp.js
 dist/
 build/
+*.tsbuildinfo
 
 # Java / Maven
 target/

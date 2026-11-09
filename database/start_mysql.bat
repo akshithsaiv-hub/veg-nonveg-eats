@@ -1,0 +1,3 @@
+@echo off
+echo Starting FoodEase MySQL Database on port 3307...
+"C:\Program Files\MySQL\MySQL Server 9.6\bin\mysqld.exe" --datadir="C:\Users\akshi\mysql_foodease_data" --port=3307 --mysqlx=0 --console
