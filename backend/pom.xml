@@ -48,6 +48,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- PostgreSQL Driver for Supabase Cloud Database -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- Spring Boot Starter Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

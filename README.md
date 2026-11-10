@@ -124,19 +124,37 @@ Open your browser at **`http://localhost:3000`** to browse, add items to cart, a
 
 ---
 
-## 🗄️ Database Configuration
+## Database Options
 
-By default, FoodEase runs on **H2 In-Memory Database** so that the project can be cloned, compiled, and evaluated with **zero database configuration**.
+FoodEase supports three database options:
 
-To switch to **MySQL**:
-1. Open [`backend/src/main/resources/application.properties`](backend/src/main/resources/application.properties)
-2. Comment out the H2 settings and enable MySQL:
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/foodeasedb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-spring.datasource.username=root
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
-```
+### 1. MySQL Database (Default)
+The application connects by default to MySQL on port 3307:
+- Start MySQL using the provided script:
+  `cmd
+  database\start_mysql.bat
+  `
+- Configuration in [ackend/src/main/resources/application.properties](backend/src/main/resources/application.properties):
+  - Database: oodeasedb (auto-created if not exists)
+  - Username: 
+oot | Password: 
+oot | Port: 3307
+- Initial SQL schema and data dump available at: [database/foodeasedb.sql](database/foodeasedb.sql).
+
+### 2. Supabase Cloud Database (PostgreSQL)
+To run with a Supabase cloud database:
+1. Enter your Supabase credentials in [ackend/src/main/resources/application-supabase.properties](backend/src/main/resources/application-supabase.properties).
+2. Start the backend with the supabase profile:
+   `cmd
+   mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=supabase
+   `
+
+### 3. H2 In-Memory Database (Zero-Setup Fallback)
+To run with an embedded in-memory database without installing any database server:
+`cmd
+mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=h2
+`
+H2 Console: http://localhost:8000/h2-console | JDBC URL: jdbc:h2:mem:foodeasedb
 
 ---
 
